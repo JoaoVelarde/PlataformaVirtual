@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace PlataformaVirtual.Application.Ports.Input.Personas
 {
-    public interface ICreatePersonaUseCase
+    public interface IGetPersonaUseCase
     {
-        Task<Guid> ExecuteAsync(CreatePersonaRequest request);
+        Task<List<GetPersonaResponse>> ExecuteAsync();
+        //IQueryable<GetPersonaResponse> Execute();
+        //Task<List<GetPersonaResponse>> ExecuteAsync(PersonaFilterRequest request);
     }
 }

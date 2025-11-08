@@ -1,4 +1,4 @@
-﻿using PlataformaVirtual.Application.Dto;
+﻿using PlataformaVirtual.Application.Dto.Persona;
 using PlataformaVirtual.Application.Ports.Input.Personas;
 using PlataformaVirtual.Domain.Entities;
 using PlataformaVirtual.Domain.Ports.Output.Repository;
@@ -26,7 +26,7 @@ namespace PlataformaVirtual.Application.Ports.Implementations
             var existings = await _personaRepository.GetByDocumentoAsync(request.NroDocumento.NroDocumento, request.IdTipoDocumento);
 
             if (existings != null)
-                throw new ApplicationException($"Customer with this '{request.NroDocumento.NroDocumento}' document alredy exists.");
+                throw new ApplicationException($"Persona con documento '{request.NroDocumento}' ya esta registrado.");
 
             var customer = Persona.Create(request.NroDocumento, request.IdTipoDocumento, request.Nombres, request.PrimerApellido, request.SegundoApellido, request.Direccion, request.Correo, request.Celular);
 
