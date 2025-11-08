@@ -1,0 +1,14 @@
+services:
+    
+    postgresql_hexagonal:
+        image: postgres:latest
+        container_name: bd_banking
+        restart: always
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: Password2025
+            POSTGRES_DB: bd_banking
+        volumes:
+            - C:\Users\juanc\OneDrive\Documentos\Docker\Volumenes\postgresql_hexagonal:/var/lib/postgresql/data
+        ports:
+            - 1502:5432
